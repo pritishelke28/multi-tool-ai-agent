@@ -1,22 +1,24 @@
-# Try this updated import structure
-from langchain.agents import AgentExecutor
-from langchain.agents import create_tool_calling_agent # Ensure you have langchain-community installed
-from langchain_openai import ChatOpenAI
+from langchain_groq import ChatGroq
+from langchain_community.tools.tavily_search import TavilySearchResults
+from langchain.agents import AgentExecutor, create_tool_calling_agent
 from langchain_core.prompts import ChatPromptTemplate
 
+# 1. Initialize the Groq LLM
+llm = ChatGroq(
+    model="llama-3.3-70b-versatile", # You can pick other models like 'llama-3.1-8b-instant'
+    temperature=0
+)
+
+# 2. Initialize the Tavily Tool
+search_tool = TavilySearchResults(max_results=3)
+tools = [search_tool]
+
+# 3. Create the agent (same structure as before)
 prompt = ChatPromptTemplate.from_messages([
-    ("system", "You are 'MyAgent', a custom research assistant. "
-               "You have access to: 1) Local PDFs for document analysis, "
-               "2) Web Search for real-time data, and 3) a Calculator for math. "
-               "If a user asks about documents, use the query_documents tool. "
-               "If a user asks for live facts, use the search_tool."),
+    ("system", "You are a helpful research assistant."),
     ("human", "{input}"),
     ("placeholder", "{agent_scratchpad}"),
 ])
-# ... your prompt definition and tools setup ...
 
-# Initialize the agent
 agent = create_tool_calling_agent(llm, tools, prompt)
 agent_executor = AgentExecutor(agent=agent, tools=tools, verbose=True)
-
-# Now 'agent_executor' is available to be imported by app.py
