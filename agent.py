@@ -1,8 +1,10 @@
 import os
 from langchain_groq import ChatGroq
 from langchain_community.tools.tavily_search import TavilySearchResults
-from langchain.agents import AgentExecutor, create_tool_calling_agent
 from langchain_core.prompts import ChatPromptTemplate
+# Replace your current import line with these:
+from langchain.agents import AgentExecutor
+from langchain.agents import create_tool_calling_agent
 
 # Ensure your API keys are loaded from environment variables
 # Streamlit Cloud handles these automatically if added to 'Secrets'
