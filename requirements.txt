@@ -1,20 +1,10 @@
-# Orchestration & Agent Framework
+streamlit
 langchain
-langgraph
-langchain-core
+langchain-openai
 langchain-community
-
-# Model Integration (Groq)
-langchain-groq
-
-# Data & Document Processing (RAG)
+langchain-core
 chromadb
-pypdf
-langchain-text-splitters
-sentence-transformers
-
-# Web Search
 tavily-python
-
-# Configuration & Utilities
-python-dotenv
+openai
+pypdf
+huggingface-hub
