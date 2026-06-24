@@ -1,0 +1,20 @@
+# Orchestration & Agent Framework
+langchain
+langgraph
+langchain-core
+langchain-community
+
+# Model Integration (Groq)
+langchain-groq
+
+# Data & Document Processing (RAG)
+chromadb
+pypdf
+langchain-text-splitters
+sentence-transformers
+
+# Web Search
+tavily-python
+
+# Configuration & Utilities
+python-dotenv
