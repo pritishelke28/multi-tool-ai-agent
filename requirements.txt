@@ -1,4 +1,10 @@
+streamlit
 langchain>=0.2.0
 langchain-core
 langchain-community
+langchain-groq
 langchain-openai
+tavily-python
+pypdf
+chromadb
+huggingface-hub
