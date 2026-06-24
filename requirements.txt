@@ -1,7 +1,10 @@
 streamlit
-networkx
-matplotlib
-llama-index-core
-llama-index-llms-groq
-llama-index-embeddings-huggingface
-python-dotenv
+langchain>=0.2.0
+langchain-openai
+langchain-community
+langchain-core
+chromadb
+tavily-python
+openai
+pypdf
+huggingface-hub
