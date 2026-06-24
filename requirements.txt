@@ -2,9 +2,9 @@ streamlit
 langchain>=0.2.0
 langchain-core
 langchain-community
-langchain-groq
 langchain-openai
+langchain-groq
 tavily-python
-pypdf
 chromadb
+pypdf
 huggingface-hub
