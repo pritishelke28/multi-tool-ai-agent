@@ -1,13 +1,12 @@
+import os
 from langchain_groq import ChatGroq
 from langchain_community.tools.tavily_search import TavilySearchResults
 from langchain.agents import AgentExecutor, create_tool_calling_agent
 from langchain_core.prompts import ChatPromptTemplate
 
-# 1. Initialize the Groq LLM
-llm = ChatGroq(
-    model="llama-3.3-70b-versatile", # You can pick other models like 'llama-3.1-8b-instant'
-    temperature=0
-)
+# Ensure your API keys are loaded from environment variables
+# Streamlit Cloud handles these automatically if added to 'Secrets'
+llm = ChatGroq(model="llama-3.3-70b-versatile", temperature=0)
 
 # 2. Initialize the Tavily Tool
 search_tool = TavilySearchResults(max_results=3)
